@@ -1,1 +1,1 @@
-![jwt](jwt.png)
+![jwt](jwt-mission.png)
