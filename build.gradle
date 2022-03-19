@@ -45,29 +45,30 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-//project(":serviceA") {
-//	jar {
-//		archivesBaseName = 'serviceA'
-//
-//		dependencies {
-//			compile project (':user')
-//		}
-//	}
-//}
+project(":serviceA") {
+	jar {
+		archivesBaseName = 'serviceA'
+	}
+	dependencies {
+		implementation project (':user')
+	}
+}
+project(":serviceB") {
+	jar {
+		archivesBaseName = 'serviceB'
+	}
+	dependencies {
+		implementation project (':user')
+	}
+}
 
-//project(":serviceB") {
-//	jar {
-//		archivesBaseName = 'serviceB'
-//
-//		dependencies {
-//			compile project (':user')
-//		}
-//	}
-//}
+project(":user") {
+	jar {
+		enabled = true
+	}
 
-//project(":user") {
-//	jar {
-//		enabled = true
-//	}
-//}
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-security'
+	}
+}
 
