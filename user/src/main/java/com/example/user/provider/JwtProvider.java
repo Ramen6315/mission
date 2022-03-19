@@ -1,4 +1,4 @@
-package com.example.demo.provider;
+package com.example.user.provider;
 
 import java.util.Base64;
 import java.util.Date;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
-    private String secretKey;
-    private long validityInMilliseconds;
+    private final String secretKey;
+    private final long validityInMilliseconds;
 
     public JwtProvider(@Value("${security.jwt.token.secret-key}") String secretKey, @Value("${security.jwt.token.expire-length}") long validityInMilliseconds) {
         this.secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
@@ -39,11 +39,7 @@ public class JwtProvider {
         try {
             Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
 
-            if (claims.getBody().getExpiration().before(new Date())) {
-                return false;
-            }
-
-            return true;
+            return !claims.getBody().getExpiration().before(new Date());
         } catch (JwtException | IllegalArgumentException e) {
             return false;
         }

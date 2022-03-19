@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+package com.example.user.controller;
 
-import com.example.demo.provider.JwtProvider;
-import com.example.demo.vo.User;
+
+import com.example.user.provider.JwtProvider;
+import com.example.user.vo.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.http.HttpClient;
 import java.util.Map;
 
 @Slf4j
