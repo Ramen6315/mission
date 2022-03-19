@@ -4,11 +4,17 @@
 //    id 'java'
 //}
 //
+//bootJar {
+//    enabled = false;
+//}
+//
+//jar {
+//    enabled = true;
+//}
+//
 //group = 'com.example'
 //version = '0.0.1-SNAPSHOT'
 //sourceCompatibility = '11'
-//
-//
 //
 //configurations {
 //    compileOnly {
@@ -22,11 +28,13 @@
 //
 //dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
 //    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+//    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
 //    compileOnly 'org.projectlombok:lombok'
 //    annotationProcessor 'org.projectlombok:lombok'
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    implementation project (":serviceA")
+//    implementation project (":serviceB")
 //}
 //
 //tasks.named('test') {

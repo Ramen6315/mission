@@ -1,4 +1,4 @@
-package com.example.demo.vo;
+package com.example.user.vo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

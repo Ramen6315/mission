@@ -1,1 +1,5 @@
-rootProject.name = 'provider'
+rootProject.name = 'demo'
+include 'user'
+include 'serviceA'
+include 'serviceB'
+
